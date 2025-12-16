@@ -1,0 +1,25 @@
+[package]
+name = "adead-parallel-utf"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+memmap2 = "0.9"
+dashmap = "5"
+rayon = "1.10"
+parking_lot = "0.12"
+lru = "0.12"
+xxhash-rust = { version = "0.8", features = ["xxh64"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "1.0"
+anyhow = "1.0"
+bytemuck = { version = "1.14", features = ["derive"] }
+
+[dev-dependencies]
+criterion = "0.5"
+rand = "0.8"
+tempfile = "3.8"
+
+[[bench]]
+name = "ram_vs_parallel"
+harness = false
